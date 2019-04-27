@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.smarthome.mapper.GoodMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.qianfeng.smarthome.entity.Good">
+		<id column="gid" property="gid" />
+		<result column="gname" property="gname" />
+		<result column="gprice" property="gprice" />
+		<result column="gmodel" property="gmodel" />
+		<result column="gimg" property="gimg" />
+		<result column="gnum" property="gnum" />
+		<result column="gdetail" property="gdetail" />
+		<result column="gtitle" property="gtitle" />
+		<result column="typeid" property="typeid" />
+	</resultMap>
+
+</mapper>

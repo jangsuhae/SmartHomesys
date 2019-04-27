@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.smarthome.mapper.OrderMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.qianfeng.smarthome.entity.Order">
+		<id column="id" property="id" />
+		<result column="orderNum" property="orderNum" />
+		<result column="price" property="price" />
+		<result column="status" property="status" />
+		<result column="createTime" property="createTime" />
+		<result column="userId" property="userId" />
+	</resultMap>
+
+</mapper>
