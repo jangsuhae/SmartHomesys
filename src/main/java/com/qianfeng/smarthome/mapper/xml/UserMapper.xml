@@ -12,4 +12,10 @@
 		<result column="sex" property="sex" />
 	</resultMap>
 
+	<select id="findByName" parameterType="string" resultType="User">
+		select *
+		from t_user
+		where uname=#{uname}
+	</select>
+
 </mapper>
