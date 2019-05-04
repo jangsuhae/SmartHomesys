@@ -21,7 +21,7 @@ public class Goodcomment extends Model<Goodcomment> {
     private static final long serialVersionUID = 1L;
 
 	@TableId(value="id", type= IdType.AUTO)
-	private Integer id;
+	private int id;
 	private Integer uid;
 	private String comment;
 	private Integer score;

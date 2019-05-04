@@ -12,4 +12,18 @@
 		<result column="gid" property="gid" />
 	</resultMap>
 
+	<select id="findAll" parameterType="int" resultType="com.qianfeng.smarthome.vo.VComment">
+		select u.uname,c.commenttime,c.`comment` from t_goodcomment c
+INNER JOIN t_user u
+where gid = #{gid}
+	</select>
+	<select id="AllComment" parameterType="int" resultType="com.qianfeng.smarthome.vo.VComment">
+		select case
+		when (AVG(score)>80 and AVG(score)&lt;100)  then '*****'
+		when (AVG(score)>60 and AVG(score)&lt;80)  then '****'
+		when (AVG(score)>40 and AVG(score)&lt;60)  then '***'
+		else '**' end as SC  from t_goodcomment
+		WHERE  gid = #{gid}
+	</select>
+
 </mapper>

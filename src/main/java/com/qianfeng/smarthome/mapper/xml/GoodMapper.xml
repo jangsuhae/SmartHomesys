@@ -15,4 +15,8 @@
 		<result column="typeid" property="typeid" />
 	</resultMap>
 
+	<select id="selectDetails" parameterType="int" resultType="com.qianfeng.smarthome.entity.Good">
+		select gimg2 from t_good
+		where 	where gid = #{gid}
+	</select>
 </mapper>

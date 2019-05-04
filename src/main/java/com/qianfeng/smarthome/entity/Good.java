@@ -32,7 +32,7 @@ public class Good extends Model<Good> {
 	private String gdetail;
 	private String gtitle;
 	private Integer typeid;
-
+	private String gimg2;
 
 	public Integer getGid() {
 		return gid;
@@ -104,6 +104,14 @@ public class Good extends Model<Good> {
 
 	public void setTypeid(Integer typeid) {
 		this.typeid = typeid;
+	}
+
+	public String getGimg2() {
+		return gimg2;
+	}
+
+	public void setGimg2(String gimg2) {
+		this.gimg2 = gimg2;
 	}
 
 	@Override
