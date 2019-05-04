@@ -2,6 +2,7 @@ package com.qianfeng.smarthome.mapper;
 
 import com.qianfeng.smarthome.entity.Good;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.qianfeng.smarthome.vo.VMenu;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -23,5 +24,7 @@ public interface GoodMapper extends BaseMapper<Good> {
     public List<Good> list();
 
    public Good selectDetails(Integer gid) ;
+
+   public List<VMenu> findAllGoods();
 
 }

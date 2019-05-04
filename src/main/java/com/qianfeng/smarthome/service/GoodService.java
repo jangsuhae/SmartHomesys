@@ -3,6 +3,7 @@ package com.qianfeng.smarthome.service;
 import com.qianfeng.smarthome.common.JsonBean;
 import com.qianfeng.smarthome.entity.Good;
 import com.baomidou.mybatisplus.service.IService;
+import com.qianfeng.smarthome.vo.VMenu;
 
 import java.util.List;
 
@@ -18,5 +19,7 @@ public interface GoodService extends IService<Good> {
     public List<Good> findAll();
 
     public Good selectDetails(Integer gid);
+
+    public List<VMenu> findAllGoods();
 	
 }

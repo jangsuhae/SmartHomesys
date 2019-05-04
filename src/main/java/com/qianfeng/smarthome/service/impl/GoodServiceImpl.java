@@ -6,6 +6,7 @@ import com.qianfeng.smarthome.mapper.GoodMapper;
 import com.qianfeng.smarthome.service.GoodService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.qianfeng.smarthome.utils.JsonUtils;
+import com.qianfeng.smarthome.vo.VMenu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,5 +40,11 @@ public class GoodServiceImpl extends ServiceImpl<GoodMapper, Good> implements Go
     public Good selectDetails(Integer gid) {
         Good details = goodMapper.selectDetails(gid);
         return details;
+    }
+
+    @Override
+    public List<VMenu> findAllGoods() {
+        List<VMenu> list = goodMapper.findAllGoods();
+        return list;
     }
 }

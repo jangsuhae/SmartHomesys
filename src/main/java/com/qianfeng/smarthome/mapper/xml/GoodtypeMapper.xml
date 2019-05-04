@@ -10,4 +10,17 @@
 		<result column="grade" property="grade" />
 	</resultMap>
 
+	<resultMap id="allType" type="com.qianfeng.smarthome.vo.VMenu">
+		<id column="id" property="id"></id>
+		<result column="typename" property="typename"></result>
+		<collection property="list" javaType="java.util.ArrayList" ofType="goodtype" resultMap="com.qianfeng.smarthome.entity.Goodtype"></collection>
+
+	</resultMap>
+
+
+	<select id="findAllType" resultMap="allType">
+	SELECT t.typeid id,t.name typename,g.* FROM t_goodtype t INNER JOIN t_goodtype g ON t.typeid=g.pid
+	</select>
+
+
 </mapper>
