@@ -15,7 +15,11 @@ import java.util.List;
  * @since 2019-04-27
  */
 public interface GoodService extends IService<Good> {
-    public List<Good> findAll();
+    public List<Good> numShort(Integer typeid);
+
+    public List<Good> priceShort(Integer typeid);
+
+    public List<Good> selectFindName(String gname);
 
     public Good selectDetails(Integer gid);
 	

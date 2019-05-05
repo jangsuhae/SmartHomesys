@@ -26,13 +26,23 @@ public class GoodServiceImpl extends ServiceImpl<GoodMapper, Good> implements Go
     @Autowired(required = false)
     private  GoodMapper goodMapper;
     @Override
-    public List<Good> findAll() {
-        List<Good> list = goodMapper.list();
-        Map<String,Object> map = new HashMap<>();
+    public List<Good> numShort(Integer typeid) {
+        List<Good> list = goodMapper.list(typeid);
+        return list;
 
+    }
+    @Override
+    public List<Good> priceShort(Integer typeid) {
+        List<Good> list = goodMapper.priceList(typeid);
 
         return list;
 
+    }
+
+    @Override
+    public List<Good> selectFindName(String gname) {
+        List<Good> list = goodMapper.listFind(gname);
+        return list;
     }
 
     @Override

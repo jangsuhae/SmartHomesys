@@ -17,6 +17,9 @@
 
 	<select id="selectDetails" parameterType="int" resultType="com.qianfeng.smarthome.entity.Good">
 		select gimg2 from t_good
-		where 	where gid = #{gid}
+		where  gid = #{gid}
+	</select>
+	<select id="listFind" parameterType="string" resultType="com.qianfeng.smarthome.entity.Good" >
+		select * from t_good where  gname like "%"#{gname}"%"
 	</select>
 </mapper>
