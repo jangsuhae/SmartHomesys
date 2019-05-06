@@ -42,6 +42,7 @@ public class GoodServiceImpl extends ServiceImpl<GoodMapper, Good> implements Go
 
     @Override
     public List<Good> selectFindName(String gname) {
+        System.out.println(gname);
         List<Good> list = goodMapper.listFind(gname);
         return list;
     }

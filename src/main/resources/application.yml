@@ -4,6 +4,12 @@ server:
     context-path: /smarthomesys
 #数据库配置
 spring:
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      force-request: true
+      enabled: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/smarthome?serverTimezone=UTC&characterEncoding=UTF8

@@ -48,8 +48,9 @@ public class GoodController {
 	return JsonUtils.createJsonBean(1,list);
 }
 // 搜索接口
-	@PostMapping("/good/findAll.do" )
+	@PostMapping( "/good/findAll.do")
 	public JsonBean findAll( String gname){
+		System.out.println(gname);
 	List<Good> list = goodService.selectFindName(gname);
 
 	return JsonUtils.createJsonBean(1,list);
