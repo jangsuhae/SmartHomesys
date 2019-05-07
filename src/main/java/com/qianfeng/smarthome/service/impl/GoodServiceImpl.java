@@ -2,6 +2,7 @@ package com.qianfeng.smarthome.service.impl;
 
 import com.qianfeng.smarthome.common.JsonBean;
 import com.qianfeng.smarthome.entity.Good;
+import com.qianfeng.smarthome.entity.Love;
 import com.qianfeng.smarthome.mapper.GoodMapper;
 import com.qianfeng.smarthome.service.GoodService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
@@ -57,5 +58,16 @@ public class GoodServiceImpl extends ServiceImpl<GoodMapper, Good> implements Go
     public List<VMenu> findAllGoods() {
         List<VMenu> list = goodMapper.findAllGoods();
         return list;
+    }
+
+    @Override
+    public void addLove(Integer loveGid) {
+
+ goodMapper.addLove(loveGid);
+    }
+
+    @Override
+    public void loveDel(Integer id) {
+        goodMapper.delLove(id);
     }
 }

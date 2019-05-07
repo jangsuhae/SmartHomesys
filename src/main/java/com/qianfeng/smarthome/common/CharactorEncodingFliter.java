@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/*",filterName = "CharacterEncodingFilter")
+@WebFilter(urlPatterns = "/*",filterName = "CharactorEncodingFliter")
 public class CharactorEncodingFliter implements Filter {
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {

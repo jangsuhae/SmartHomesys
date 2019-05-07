@@ -10,6 +10,15 @@
 		<result column="status" property="status" />
 		<result column="createTime" property="createTime" />
 		<result column="userId" property="userId" />
+		<result column="gid" property="gid" />
 	</resultMap>
+
+	<select id="selectAll" parameterType="int" resultType="com.qianfeng.smarthome.vo.VOrder">
+SELECT g.*,o.orderNum, r.statusName from t_good g
+INNER JOIN t_order o on g.gid = o.gid
+INNER JOIN t_orderstatus r on o.`status` = r.id
+where userId = #{userId}
+
+	</select>
 
 </mapper>

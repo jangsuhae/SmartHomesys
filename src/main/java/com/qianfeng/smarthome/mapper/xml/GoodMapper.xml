@@ -33,4 +33,6 @@
 	<select id="findAllGoods" resultMap="TypeGoods">
 		SELECT t.typeid id,t.name typename,o.* FROM t_goodtype t INNER JOIN t_goodtype g ON t.typeid=g.pid INNER JOIN t_good o ON g.typeid=o.typeid
 	</select>
+
+
 </mapper>

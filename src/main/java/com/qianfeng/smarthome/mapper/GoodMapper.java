@@ -2,7 +2,10 @@ package com.qianfeng.smarthome.mapper;
 
 import com.qianfeng.smarthome.entity.Good;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.qianfeng.smarthome.entity.Love;
 import com.qianfeng.smarthome.vo.VMenu;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -29,5 +32,11 @@ public interface GoodMapper extends BaseMapper<Good> {
    public Good selectDetails(Integer gid) ;
 
    public List<VMenu> findAllGoods();
+
+   @Insert("INSERT INTO t_love VALUES (null,#{loveGid})")
+
+   public void addLove(Integer love);
+@Delete("delete  from t_love where id = #{id}")
+   public  int delLove(Integer id);
 
 }

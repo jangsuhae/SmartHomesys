@@ -2,6 +2,7 @@ package com.qianfeng.smarthome.controller;
 
 import com.qianfeng.smarthome.common.JsonBean;
 import com.qianfeng.smarthome.entity.Good;
+import com.qianfeng.smarthome.entity.Love;
 import com.qianfeng.smarthome.service.GoodService;
 import com.qianfeng.smarthome.utils.JsonUtils;
 import org.apache.ibatis.annotations.Param;
@@ -50,7 +51,7 @@ public class GoodController {
 // 搜索接口
 	@PostMapping( "/good/findAll.do")
 	public JsonBean findAll( String gname){
-		System.out.println(gname);
+
 	List<Good> list = goodService.selectFindName(gname);
 
 	return JsonUtils.createJsonBean(1,list);
@@ -61,5 +62,18 @@ public class GoodController {
 	Good details = goodService.selectDetails(gid);
 	return JsonUtils.createJsonBean(1,details);
 }
+	@GetMapping("love.do")
+	public JsonBean addLove(Integer gid) {
+
+   goodService.addLove(gid);
+		return JsonUtils.createJsonBean(1,null);
+	}
+
+	@GetMapping("lovedel.do")
+	public JsonBean delLove(Integer id){
+
+		goodService.loveDel(id);
+		return JsonUtils.createJsonBean(1,null);
+	}
 
 }

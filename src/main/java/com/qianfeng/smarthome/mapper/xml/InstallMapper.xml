@@ -4,6 +4,7 @@
 
 	<!-- 通用查询映射结果 -->
 	<resultMap id="BaseResultMap" type="com.qianfeng.smarthome.entity.Install">
+
 		<id column="id" property="id" />
 		<result column="pid" property="pid" />
 		<result column="status" property="status" />
@@ -13,5 +14,6 @@
 		<result column="desc" property="desc" />
 		<result column="createTime" property="createTime" />
 	</resultMap>
+
 
 </mapper>

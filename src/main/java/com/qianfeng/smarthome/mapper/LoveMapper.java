@@ -1,5 +1,6 @@
 package com.qianfeng.smarthome.mapper;
 
+import com.qianfeng.smarthome.entity.Good;
 import com.qianfeng.smarthome.entity.Love;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
@@ -12,5 +13,6 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * @since 2019-04-27
  */
 public interface LoveMapper extends BaseMapper<Love> {
+
 
 }

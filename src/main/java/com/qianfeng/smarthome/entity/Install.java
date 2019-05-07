@@ -18,10 +18,11 @@ import java.io.Serializable;
 @TableName("t_install")
 public class Install extends Model<Install> {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	@TableId(value="id", type= IdType.AUTO)
-	private Integer id;
+	private int id;
+
 	private Integer pid;
 	private Integer status;
 	private Date serviceTime;

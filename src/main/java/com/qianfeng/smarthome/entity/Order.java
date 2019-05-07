@@ -27,7 +27,16 @@ public class Order extends Model<Order> {
 	private Integer status;
 	private Date createTime;
 	private Integer userId;
+	private Integer gid;
 
+	public Integer getGid() {
+
+		return gid;
+	}
+
+	public void setGid(Integer gid) {
+		this.gid = gid;
+	}
 
 	public Integer getId() {
 		return id;
