@@ -16,4 +16,5 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 public interface UserMapper extends BaseMapper<User> {
 
     public User findByName(String name);
+    public void register(User user);
 }

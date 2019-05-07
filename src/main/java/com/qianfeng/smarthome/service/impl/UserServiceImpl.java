@@ -34,4 +34,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
         return user;
     }
+
+    @Override
+    public void register(User user) {
+        userMapper.register(user);
+    }
 }

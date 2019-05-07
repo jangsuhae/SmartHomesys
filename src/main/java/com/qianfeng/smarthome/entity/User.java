@@ -19,8 +19,9 @@ public class User extends Model<User> {
 
     private static final long serialVersionUID = 1L;
 
-	@TableId(value="uid", type= IdType.AUTO)
+	@TableId(value="uid", type = IdType.AUTO)
 	private Integer uid;
+
 	private String uname;
 	private String password;
 	private String phone;

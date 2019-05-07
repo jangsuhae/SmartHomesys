@@ -19,7 +19,7 @@ public class CharactorEncodingFliter implements Filter {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 
-		filterChain.doFilter(request , response);
+		filterChain.doFilter(request,response);
 	}
 	@Override
 	public void destroy() {

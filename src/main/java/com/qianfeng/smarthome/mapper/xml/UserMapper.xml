@@ -4,7 +4,7 @@
 
 	<!-- 通用查询映射结果 -->
 	<resultMap id="BaseResultMap" type="com.qianfeng.smarthome.entity.User">
-		<id column="uid" property="uid" />
+		<id column="uid" property="uid" javaType="INTEGER" />
 		<result column="uname" property="uname" />
 		<result column="password" property="password" />
 		<result column="phone" property="phone" />
@@ -17,5 +17,9 @@
 		from t_user
 		where uname=#{uname}
 	</select>
+
+	<insert id="register" parameterType="com.qianfeng.smarthome.entity.User" >
+		insert into t_user values ( #{uid,jdbcType=INTEGER},#{uname},#{password},#{phone},#{email},#{sex})
+	</insert>
 
 </mapper>
