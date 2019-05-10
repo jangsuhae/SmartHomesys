@@ -24,9 +24,16 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     @Autowired
     private OrderMapper orderMapper;
     @Override
-    public List<VOrder> list(int id) {
+    public List<VOrder> list(int userId) {
 
-        List<VOrder> list = orderMapper.selectAll(id);
+        List<VOrder> list = orderMapper.selectAll(userId);
+        return list;
+    }
+
+    @Override
+    public List<VOrder> findByStatus(Integer statusid, int userId) {
+
+        List<VOrder> list = orderMapper.findByStatus(statusid, userId);
         return list;
     }
 }

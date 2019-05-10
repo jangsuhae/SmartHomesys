@@ -8,6 +8,8 @@ import com.qianfeng.smarthome.service.GoodService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.qianfeng.smarthome.utils.JsonUtils;
 import com.qianfeng.smarthome.vo.VMenu;
+import com.qianfeng.smarthome.vo.VMenu2;
+import com.qianfeng.smarthome.vo.VMenu3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,4 +72,18 @@ public class GoodServiceImpl extends ServiceImpl<GoodMapper, Good> implements Go
     public void loveDel(Integer id) {
         goodMapper.delLove(id);
     }
+
+    /*查找所有二级商品目录及对应商品*/
+    @Override
+    public List<VMenu2> findAllGoods2() {
+        List<VMenu2> list = goodMapper.findAllGoods2();
+        return list;
+    }
+    /*查找所有一,二级商品目录及对应商品*/
+    @Override
+    public List<VMenu3> findAllGoods3() {
+        List<VMenu3> list = goodMapper.findAllGoods3();
+        return list;
+    }
+
 }

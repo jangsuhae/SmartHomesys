@@ -22,21 +22,12 @@ public class Order extends Model<Order> {
 
 	@TableId(value="id", type= IdType.AUTO)
 	private Integer id;
-	private Integer orderNum;
+	private String orderNum;
 	private Integer price;
 	private Integer status;
 	private Date createTime;
 	private Integer userId;
-	private Integer gid;
 
-	public Integer getGid() {
-
-		return gid;
-	}
-
-	public void setGid(Integer gid) {
-		this.gid = gid;
-	}
 
 	public Integer getId() {
 		return id;
@@ -46,11 +37,11 @@ public class Order extends Model<Order> {
 		this.id = id;
 	}
 
-	public Integer getOrderNum() {
+	public String getOrderNum() {
 		return orderNum;
 	}
 
-	public void setOrderNum(Integer orderNum) {
+	public void setOrderNum(String orderNum) {
 		this.orderNum = orderNum;
 	}
 

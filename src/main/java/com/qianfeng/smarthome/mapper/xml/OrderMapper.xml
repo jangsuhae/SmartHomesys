@@ -13,11 +13,48 @@
 		<result column="gid" property="gid" />
 	</resultMap>
 
-	<select id="selectAll" parameterType="int" resultType="com.qianfeng.smarthome.vo.VOrder">
-SELECT g.*,o.orderNum, r.statusName from t_good g
-INNER JOIN t_order o on g.gid = o.gid
-INNER JOIN t_orderstatus r on o.`status` = r.id
-where userId = #{userId}
+	<resultMap id="VOderdetailMap" type="com.qianfeng.smarthome.vo.VOrderDetail">
+		<id column="oid" property="oid" />
+		<result column="goodNum" property="goodNum" />
+		<result column="gid" property="gid" />
+		<result column="gname" property="gname" />
+		<result column="gprice" property="gprice" />
+		<result column="gmodel" property="gmodel" />
+		<result column="gimg" property="gimg" />
+		<result column="gnum" property="gnum" />
+		<result column="gdetail" property="gdetail" />
+		<result column="gtitle" property="gtitle" />
+		<result column="typeid" property="typeid" />
+		<result column="gimg2" property="gimg2" />
+	</resultMap>
+
+	<resultMap id="orderMap" type="com.qianfeng.smarthome.vo.VOrder">
+		<id column="id" property="id"></id>
+		<result column="orderNum" property="orderNum"></result>
+		<result column="price" property="price"></result>
+		<result column="status" property="status"></result>
+		<result column="createTime" property="createTime"></result>
+		<result column="userId" property="userId"></result>
+		<result column="statusName" property="statusName"></result>
+		<collection property="list" javaType="java.util.ArrayList" ofType="com.qianfeng.smarthome.vo.VOrderDetail" resultMap="VOderdetailMap"></collection>
+
+	</resultMap>
+
+	<select id="selectAll" parameterType="int" resultMap="orderMap">
+	SELECT o.*,os.statusName, od.id oid, od.goodNum, g.* FROM t_order o
+	INNER JOIN t_orderdetail od ON o.orderNum = od.orderNum
+	INNER JOIN t_orderstatus os on o.`status`=os.id
+	INNER JOIN t_good g on od.goodId= g.gid
+	where userId = #{userId}
+
+	</select>
+
+	<select id="findByStatus"  resultMap="orderMap">
+	SELECT o.*,os.statusName, od.id oid, od.goodNum, g.* FROM t_order o
+	INNER JOIN t_orderdetail od ON o.orderNum = od.orderNum
+	INNER JOIN t_orderstatus os on o.`status`=os.id
+	INNER JOIN t_good g on od.goodId= g.gid
+	where o.status=#{statusid} and userId = #{userId}
 
 	</select>
 

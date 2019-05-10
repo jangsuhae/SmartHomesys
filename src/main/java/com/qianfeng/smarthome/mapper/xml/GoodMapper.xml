@@ -13,13 +13,27 @@
 		<result column="gdetail" property="gdetail" />
 		<result column="gtitle" property="gtitle" />
 		<result column="typeid" property="typeid" />
+		<result column="gimg2" property="gimg2"/>
 	</resultMap>
 
 	<resultMap id="TypeGoods" type="com.qianfeng.smarthome.vo.VMenu">
 		<id column="id" property="id"></id>
 		<result column="typename" property="typename"></result>
 		<collection property="list" javaType="java.util.ArrayList" ofType="good" resultMap="BaseResultMap"></collection>
+	</resultMap>
 
+	<resultMap id="TypeGoods2" type="com.qianfeng.smarthome.vo.VMenu2">
+		<id column="typeid" property="typeid"></id>
+		<result column="name" property="name"></result>
+		<result column="pid" property="pid"></result>
+		<result column="grade" property="grade"></result>
+		<collection property="list" javaType="java.util.ArrayList" ofType="good" resultMap="BaseResultMap"></collection>
+	</resultMap>
+
+	<resultMap id="TypeGoods3" type="com.qianfeng.smarthome.vo.VMenu3">
+		<id column="id" property="id"></id>
+		<result column="typename" property="typename"></result>
+		<collection property="list" javaType="java.util.ArrayList" ofType="com.qianfeng.smarthome.vo.VMenu2" resultMap="TypeGoods2"></collection>
 	</resultMap>
 
 	<select id="selectDetails" parameterType="int" resultType="com.qianfeng.smarthome.entity.Good">
@@ -32,6 +46,15 @@
 
 	<select id="findAllGoods" resultMap="TypeGoods">
 		SELECT t.typeid id,t.name typename,o.* FROM t_goodtype t INNER JOIN t_goodtype g ON t.typeid=g.pid INNER JOIN t_good o ON g.typeid=o.typeid
+	</select>
+
+	<select id="findAllGoods2" resultMap="TypeGoods2">
+		SELECT g.*,o.* FROM  t_goodtype g LEFT JOIN t_good o ON g.typeid=o.typeid where g.grade=2
+	</select>
+
+	<select id="findAllGoods3" resultMap="TypeGoods3">
+		SELECT t.typeid id,t.name typename,g.*,o.* FROM t_goodtype t INNER  JOIN t_goodtype g ON t.typeid=g.pid
+		LEFT JOIN t_good o ON g.typeid=o.typeid
 	</select>
 
 

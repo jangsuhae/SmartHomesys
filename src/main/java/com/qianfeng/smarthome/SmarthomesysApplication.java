@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @MapperScan("com.qianfeng.smarthome.mapper")
 @EnableSwagger2
 @ServletComponentScan
-public class SmarthomesysApplication extends SpringBootServletInitializer {
+public class SmarthomesysApplication  extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmarthomesysApplication.class, args);

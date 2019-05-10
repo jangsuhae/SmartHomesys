@@ -23,7 +23,7 @@ public class Orderdetail extends Model<Orderdetail> {
 	private Integer id;
 	private Integer goodId;
 	private Integer goodNum;
-	private Integer orderNum;
+	private String orderNum;
 
 
 	public Integer getId() {
@@ -50,11 +50,11 @@ public class Orderdetail extends Model<Orderdetail> {
 		this.goodNum = goodNum;
 	}
 
-	public Integer getOrderNum() {
+	public String getOrderNum() {
 		return orderNum;
 	}
 
-	public void setOrderNum(Integer orderNum) {
+	public void setOrderNum(String orderNum) {
 		this.orderNum = orderNum;
 	}
 

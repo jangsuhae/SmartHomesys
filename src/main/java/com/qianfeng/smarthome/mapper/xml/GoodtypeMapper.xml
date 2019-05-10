@@ -13,7 +13,7 @@
 	<resultMap id="allType" type="com.qianfeng.smarthome.vo.VMenu">
 		<id column="id" property="id"></id>
 		<result column="typename" property="typename"></result>
-		<collection property="list" javaType="java.util.ArrayList" ofType="goodtype" resultMap="com.qianfeng.smarthome.entity.Goodtype"></collection>
+		<collection property="list" javaType="java.util.ArrayList" ofType="goodtype" resultMap="BaseResultMap"></collection>
 
 	</resultMap>
 

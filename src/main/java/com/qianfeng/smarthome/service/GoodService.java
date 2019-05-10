@@ -5,6 +5,8 @@ import com.qianfeng.smarthome.entity.Good;
 import com.baomidou.mybatisplus.service.IService;
 import com.qianfeng.smarthome.entity.Love;
 import com.qianfeng.smarthome.vo.VMenu;
+import com.qianfeng.smarthome.vo.VMenu2;
+import com.qianfeng.smarthome.vo.VMenu3;
 
 import java.util.List;
 
@@ -30,5 +32,11 @@ public interface GoodService extends IService<Good> {
     public void addLove(Integer loveGid );
 
     public void loveDel(Integer id);
+
+    /*查找所有二级商品目录及对应商品*/
+    public List<VMenu2> findAllGoods2();
+
+    /*查找所有一,二级商品目录及对应商品*/
+    public List<VMenu3> findAllGoods3();
 	
 }

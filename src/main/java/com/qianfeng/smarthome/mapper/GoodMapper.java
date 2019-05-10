@@ -4,6 +4,8 @@ import com.qianfeng.smarthome.entity.Good;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.qianfeng.smarthome.entity.Love;
 import com.qianfeng.smarthome.vo.VMenu;
+import com.qianfeng.smarthome.vo.VMenu2;
+import com.qianfeng.smarthome.vo.VMenu3;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -30,7 +32,7 @@ public interface GoodMapper extends BaseMapper<Good> {
     public List<Good> priceList(Integer typeid);
     public List<Good> listFind(String gname);
    public Good selectDetails(Integer gid) ;
-
+    /*查找所有一级商品目录及对应三级商品（二级目录不展示）*/
    public List<VMenu> findAllGoods();
 
    @Insert("INSERT INTO t_love VALUES (null,#{loveGid})")
@@ -38,5 +40,9 @@ public interface GoodMapper extends BaseMapper<Good> {
    public void addLove(Integer love);
 @Delete("delete  from t_love where id = #{id}")
    public  int delLove(Integer id);
+    /*查找所有二级商品目录及对应商品*/
+    public  List<VMenu2> findAllGoods2();
+    /*查找所有一,二级商品目录及对应商品*/
+    public  List<VMenu3> findAllGoods3();
 
 }

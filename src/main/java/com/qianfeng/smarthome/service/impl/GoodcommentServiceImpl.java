@@ -21,7 +21,7 @@ import java.util.List;
 @Service
 public class GoodcommentServiceImpl extends ServiceImpl<GoodcommentMapper, Goodcomment> implements GoodcommentService {
 
-    @Autowired(required = false)
+    @Autowired
     private GoodcommentMapper goodcommentMapper;
     @Override
     public List<VComment> findAll(Integer gid) {

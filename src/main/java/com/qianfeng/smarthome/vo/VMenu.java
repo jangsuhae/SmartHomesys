@@ -3,7 +3,7 @@ package com.qianfeng.smarthome.vo;
 import com.qianfeng.smarthome.entity.Goodtype;
 
 import java.util.List;
-
+/*一级目录和对应三级商品展示*/
 public class VMenu {
 	private Integer id;
 	private String typename;

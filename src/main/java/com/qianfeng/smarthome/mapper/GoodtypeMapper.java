@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.qianfeng.smarthome.vo.VMenu;
 import jdk.nashorn.internal.runtime.FindProperty;
 
+import java.util.List;
+
 /**
  * <p>
   *  Mapper 接口
@@ -14,6 +16,6 @@ import jdk.nashorn.internal.runtime.FindProperty;
  * @since 2019-04-27
  */
 public interface GoodtypeMapper extends BaseMapper<Goodtype> {
-	public VMenu findAllType();
+	public List<VMenu> findAllType();
 
 }

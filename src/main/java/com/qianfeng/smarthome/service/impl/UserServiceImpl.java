@@ -39,4 +39,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public void register(User user) {
         userMapper.register(user);
     }
+
+    @Override
+    public User findByName(String uname) {
+        User user = userMapper.findByName(uname);
+        return user;
+    }
 }

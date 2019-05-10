@@ -27,6 +27,16 @@ public class Maintainservice extends Model<Maintainservice> {
 	private String pmodel;
 	private Integer status;
 
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	private Integer userId;
+
 
 	public Integer getId() {
 		return id;

@@ -19,5 +19,7 @@ import java.util.List;
 public interface OrderService extends IService<Order> {
 
 
-    public List<VOrder> list(int id);
+    public List<VOrder> list(int userId);
+
+    public List<VOrder> findByStatus(Integer statusid,int userId);
 }

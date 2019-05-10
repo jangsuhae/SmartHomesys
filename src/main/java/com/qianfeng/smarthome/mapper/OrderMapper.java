@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.qianfeng.smarthome.vo.VOrder;
 import org.apache.catalina.LifecycleState;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,6 +21,8 @@ import java.util.List;
 @Mapper
 public interface OrderMapper extends BaseMapper<Order> {
 
-    public List<VOrder> selectAll(Integer id);
+    public List<VOrder> selectAll(Integer userId);
+
+    public List<VOrder> findByStatus(@Param("statusid") Integer statusid, @Param("userId") Integer userId);
 
 }

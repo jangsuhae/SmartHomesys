@@ -5,6 +5,8 @@ import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -16,6 +18,7 @@ import java.io.Serializable;
  * @since 2019-04-27
  */
 @TableName("t_install")
+@Data
 public class Install extends Model<Install> {
 
 	private static final long serialVersionUID = 1L;
@@ -30,7 +33,16 @@ public class Install extends Model<Install> {
 	private String gmodel;
 	private String desc;
 	private Date createTime;
+	private  Integer userId;
 
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
 
 	public Integer getId() {
 		return id;
